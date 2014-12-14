@@ -1,0 +1,47 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  color: #3d454d;
+  height: 100%;
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+/* Header */
+
+nav.navbar-poller {
+	background-color: none;
+	border: none;
+}
+
+/* Footer */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+footer div.left-footer {
+	margin: 20px 20px;
+}
+
+footer div.left-footer a {
+	margin-right: 20px;
+}
+
+footer div.right-footer {
+	margin: 20px 20px;
+	float: right;
+}
+
+footer div.right-footer p {
+	float: right;
+}
+
