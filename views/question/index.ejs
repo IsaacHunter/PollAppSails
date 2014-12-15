@@ -10,9 +10,11 @@
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
       <h3 class=""><%- question.title %></h3>
-			<ul class="answers-home list-group">
+			<div class="answers-home list-group">
 				<% answers.forEach(function (answer, index) { %>
-					<li class="list-group-item"><%- index + 1 %>: <%- answer.title %></li>
+					<a href="<%- 'answer/' + answer.id %>" class="list-group-item">
+						<%- index + 1 %>: <%- answer.title %>
+					</a>
 				<% }) %>
 			</ul>
     </div>
