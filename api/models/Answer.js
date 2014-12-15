@@ -6,6 +6,8 @@
 */
 
 module.exports = {
+	
+	connection: 'someMysqlServer',
 
   schema: true,
 
