@@ -11,7 +11,11 @@
 			<a href="/question/new">Create new question</a>
 			<ul class="list-group questions">
 				<% questions.forEach(function (question, index) { %>
-					<li class="list-group-item"><%- index + 1 %>: <%- question.title %></li>
+					<li class="list-group-item">
+						<p class="question-item">
+							<%- index + 1 %>: <%- question.title %> <a href="/question/<%- question.id %>" class="results-link">See results</a>
+						</p>
+					</li>
 				<% }) %>
 			</ul>
     </div>

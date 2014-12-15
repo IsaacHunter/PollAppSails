@@ -46,7 +46,33 @@ module.exports = {
 			res.redirect('/user/show/' + req.session.User.id);
 		});
 		
-	}
+	},
+	
+  show: function(req, res, next) {
+    Question.findOne(req.param('id'), function (err, question) {
+      if (err) return next(err);
+
+			Question.findOne(req.param('id')).populate('answers').exec(function(err, answersObj) {
+				if (err) {
+					console.log(err);
+					return;
+				}
+				
+				var answers = answersObj.answers;
+				answers.map(function (answer) {
+					Answer.result(answer.id, answer);
+				});
+				
+				setTimeout( function () {
+		      res.view({
+		        question: question,
+						answers: answers
+		      });					
+				}, 500);
+			})
+
+    });
+  },
 	
 };
 

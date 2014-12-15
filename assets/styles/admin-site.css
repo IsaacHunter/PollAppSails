@@ -1,3 +1,17 @@
 ul.questions {
 	margin-top: 10px;
 }
+
+p.question-item {
+	margin-bottom: 0;
+}
+
+a.results-link {
+	float: right;
+}
+
+/* Results page */
+
+p.answer-item {
+	margin-bottom: 0;
+}

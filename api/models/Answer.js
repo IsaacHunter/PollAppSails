@@ -26,8 +26,15 @@ module.exports = {
 		answerChoices: {
 			collection: 'answerChoice',
 			via: 'answer'
-		}
+		},
 		
+	},
+	
+	result: function (id, obj) {
+		Answer.find(id).populate('answerChoices').exec(function (err, ansChoicesObj) {
+			obj.result = ansChoicesObj[0].answerChoices.length;
+		});
 	}
+	
 };
 

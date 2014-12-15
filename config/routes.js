@@ -37,6 +37,11 @@ module.exports.routes = {
 		action: 'create'
 	},
 	
+	'/question/:id': {
+		controller: 'QuestionController',
+		action: 'show'
+	},
+	
 	'/answer/:answerId': {
 		controller: 'AnswerChoiceController',
 		action: 'create'
