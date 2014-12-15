@@ -12,6 +12,8 @@ a.results-link {
 
 /* Results page */
 
-p.answer-item {
-	margin-bottom: 0;
+#container-results {
+	margin-top: 20px;
 }
+
+
