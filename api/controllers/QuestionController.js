@@ -8,6 +8,8 @@
 module.exports = {
 	
 	'index': function (req, res) {
+		var randomIndex = (Math.random() * 10) + 1
+		
 		Question.findOne(1).exec(function (err, question) {
 			if (err) return next(err);
 			
