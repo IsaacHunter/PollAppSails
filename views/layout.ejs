@@ -34,6 +34,10 @@
     <link rel="stylesheet" href="/styles/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/vendor/font-awesome.min.css">
     <!--STYLES END-->
+		
+    <script type="text/javascript">
+      window.overlord = { csrf: '<%= _csrf %>'};
+    </script>
   </head>
 
   <body>
@@ -53,12 +57,16 @@
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav navbar-right">
 		        <li>
-		          <button type="button"
-		                  class="btn btn-primary btn-link"
-		                  data-toggle="modal"
-		                  data-target="#sign-in-modal">
-		            Sign In
-		          </button>
+							<% if (session.authenticated) { %>
+								<a class="btn btn-default" href="/session/destroy">Sign Out</a>
+							<% } else { %>		
+			          <button type="button"
+			                  class="btn btn-primary btn-link"
+			                  data-toggle="modal"
+			                  data-target="#sign-in-modal">
+			            Sign In
+			          </button>
+							<% } %>
 		        </li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->

@@ -16,6 +16,11 @@ module.exports = {
   		required: true
   	},
 		
+		user: {
+			via: 'user',
+			required: true
+		},
+		
 		answers: {
 			collection: 'answer',
 			via: 'question'

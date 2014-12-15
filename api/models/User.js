@@ -27,6 +27,19 @@ module.exports = {
       defaultsTo: false
     },
 		
-	}
+		questions: {
+			collection: 'question',
+			via: 'user'
+		}
+		
+	},
+	
+  beforeCreate: function(values, next) {
+    require('bcrypt').hash(values.password, 10, function passwordEncrypted(err, encryptedPassword) {
+      if (err) return next(err);
+      values.encryptedPassword = encryptedPassword;
+      next();
+    });
+  }
 };
 
