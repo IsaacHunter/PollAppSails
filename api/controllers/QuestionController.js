@@ -27,5 +27,17 @@ module.exports = {
 		});
 	},
 	
+	'create': function (req, res) {
+		// if (!req.session.User) {
+		// 	res.redirect('/');
+		// 	return;
+		// }
+		console.log("hello in the create action!");
+		console.log(req.param('question'));
+		console.log(req.param('answer'));
+		res.redirect('/question/new');
+		return;
+	}
+	
 };
 

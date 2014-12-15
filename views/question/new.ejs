@@ -8,11 +8,12 @@
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
       <h3 class="">New Question!</h3>
-			<form role="form">
+			<form role="form" action="/question" method="POST">
+				<input type="hidden" name="_csrf" value="<%= _csrf %>" />
 				<input type="hidden" name="question[user]" value="<%- user.id %>">
 			  <div class="form-group">
 			    <label for="question-title">Question</label>
-			    <input type="email" class="form-control" id="question-title" placeholder="Enter Question">
+			    <input type="text" class="form-control" name="question[title]" placeholder="Enter Question">
 			  </div>
 				<div class="answers">
 					<label>Answers</label>

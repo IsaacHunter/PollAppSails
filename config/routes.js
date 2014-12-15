@@ -32,6 +32,11 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 	
+	'post /question': {
+		controller: 'QuestionController',
+		action: 'create'
+	},
+	
   '/': {
     controller: 'QuestionController',
 		action: 'index'
