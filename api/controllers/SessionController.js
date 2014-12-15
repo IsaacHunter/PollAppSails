@@ -48,9 +48,7 @@ module.exports = {
   },
 
   destroy: function(req, res, next) {
-		console.log("in the destroy action");
     req.session.destroy();
-		console.log(req.session)
     res.redirect('/');
 	}
 };

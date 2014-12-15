@@ -9,15 +9,34 @@
     <div class="col-xs-6 col-xs-offset-3">
       <h3 class="">New Question!</h3>
 			<form role="form">
+				<input type="hidden" name="question[user]" value="<%- user.id %>">
 			  <div class="form-group">
 			    <label for="question-title">Question</label>
 			    <input type="email" class="form-control" id="question-title" placeholder="Enter Question">
 			  </div>
-			  <div class="form-group">
-			    <input type="text" class="form-control" name="answer[title]" placeholder="Answer">
-			  </div>
+				<div class="answers">
+				  <div class="form-group">
+				    <input type="text" class="form-control" name="answer[title]" placeholder="Enter Answer">
+				  </div>
+				</div>
+				<a href="javascript:void(0)" class="btn btn-link" id="add-answer">Add Answer</a>
 			  <button type="submit" class="btn btn-default">Submit</button>
 			</form>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+
+	$(function () {
+		$('#add-answer').on('click', function (event) {
+			var $containerAns = $('<div>').addClass('form-group');
+			var $inputAns = $('<input>').addClass('form-control')
+																	.attr('name', 'answer[title]')
+																	.attr('placeholder', 'Enter Answer');
+			$containerAns.append($inputAns);
+			$('div.answers').append($containerAns);
+		});
+	});
+
+</script>

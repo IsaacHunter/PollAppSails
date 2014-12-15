@@ -35,6 +35,12 @@
     <link rel="stylesheet" href="/styles/vendor/font-awesome.min.css">
     <!--STYLES END-->
 		
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/vendor/jquery-1.11.1.min.js"></script>
+    <script src="/js/vendor/bootstrap.min.js"></script>
+    <!--SCRIPTS END-->
+		
     <script type="text/javascript">
       window.overlord = { csrf: '<%= _csrf %>'};
     </script>
@@ -58,7 +64,7 @@
 		      <ul class="nav navbar-nav navbar-right">
 		        <li>
 							<% if (session.authenticated) { %>
-								<a class="btn btn-default" href="/session/destroy">Sign Out</a>
+								<a class="btn btn-link" href="/session/destroy">Sign Out</a>
 							<% } else { %>		
 			          <button type="button"
 			                  class="btn btn-primary btn-link"
@@ -138,11 +144,8 @@
           + Use a different preprocessor, like TypeScript
 
     -->
-
-    <!--SCRIPTS-->
-    <script src="/js/dependencies/sails.io.js"></script>
-    <script src="/js/vendor/jquery-1.11.1.min.js"></script>
-    <script src="/js/vendor/bootstrap.min.js"></script>
-    <!--SCRIPTS END-->
+			
+    
+    
   </body>
 </html>
