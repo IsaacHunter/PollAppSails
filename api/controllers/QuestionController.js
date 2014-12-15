@@ -28,15 +28,26 @@ module.exports = {
 	},
 	
 	'create': function (req, res) {
-		// if (!req.session.User) {
-		// 	res.redirect('/');
-		// 	return;
-		// }
+		if (!req.session.User) {
+			res.redirect('/');
+			return;
+		}
 		console.log("hello in the create action!");
-		console.log(req.param('question'));
-		console.log(req.param('answer'));
-		res.redirect('/question/new');
-		return;
+		console.log(req.param('question').title);
+		console.log(req.param('answer').title);
+		Question.create({ title: req.param('question').title, user: req.param('question').user }).exec(function (err, question) {
+			if (err) {
+				console.log(err);
+				res.redirect('/');
+				return;
+			}
+			
+			req.param('answer').title.forEach( function (title) {
+				question.answers.add({ title: title});
+			})
+			res.redirect('/user/show/' + req.session.User.id);
+		});
+		
 	}
 	
 };
