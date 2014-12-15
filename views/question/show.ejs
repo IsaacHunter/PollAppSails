@@ -7,16 +7,45 @@
   </div>
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
-      <h3 class="">Answers</h3>
-			<ul class="list-group questions">
-				<% answers.forEach(function (answer, index) { %>
-					<li class="list-group-item">
-						<p class="answer-item">
-							<%- index + 1 %>: <%- answer.title %> <span>Votes: <%- answer.result %></span>
-						</p>
-					</li>
-				<% }) %>
-			</ul>
+			<div id="container-results">
+			</div>
     </div>
   </div>
 </div>
+
+<script text="text/javascript">
+	$(function () {
+		<% var answerTitlesStr = '['; %>
+		<% var resultsStr = '['; %>
+		<% answers.forEach(function (answer, index) { %>
+			<% answerTitlesStr += "'" + answer.title + "'"; %>
+			<% resultsStr += answer.result; %>
+			<% if (index < answers.length - 1) { %>
+				<% answerTitlesStr += ', '; %>
+				<% resultsStr += ', '; %>
+			<% } %>
+		<% }); %>
+		<%- 'var answerTitles = ' + answerTitlesStr + '];' %>
+		<%- 'var results = ' + resultsStr + '];' %>
+	    $('#container-results').highcharts({
+	        chart: {
+	          type: 'column'
+	        },
+					title: {
+						text: ''
+					},
+	        xAxis: {
+						categories: answerTitles
+	        },
+	        yAxis: {
+	          title: {
+	            text: 'Number of votes'
+	          }
+	        },
+	        series: [{
+						name: 'Votes',
+	          data: results
+	        }]
+	    });
+	});
+</script>
