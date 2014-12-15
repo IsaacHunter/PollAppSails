@@ -8,10 +8,10 @@
 module.exports = {
 	
 	'index': function (req, res) {
-		Question.findOne(1).exec(function (err, question) {
+		Question.findOne(4).exec(function (err, question) {
 			if (err) return next(err);
 			
-			Question.findOne(1).populate('answers').exec(function (err, answersObj) {
+			Question.findOne(4).populate('answers').exec(function (err, answersObj) {
 				res.view({
 					question: question,
 					answers: answersObj.answers

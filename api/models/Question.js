@@ -17,7 +17,7 @@ module.exports = {
   	},
 		
 		user: {
-			via: 'user',
+			model: 'user',
 			required: true
 		},
 		

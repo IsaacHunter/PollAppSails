@@ -10,6 +10,9 @@
       <h3 class="">Your questions</h3>
 			<a href="/question/new">Create new question</a>
 			<ul class="list-group">
+				<% questions.forEach(function (question, index) { %>
+					<li class="list-group-item"><%- index + 1 %>: <%- question.title %></li>
+				<% }) %>
 			</ul>
     </div>
   </div>
