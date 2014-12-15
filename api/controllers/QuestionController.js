@@ -8,10 +8,10 @@
 module.exports = {
 	
 	'index': function (req, res) {
-		Question.findOne(2).exec(function (err, question) {
+		Question.findOne(1).exec(function (err, question) {
 			if (err) return next(err);
 			
-			Question.findOne(2).populate('answers').exec(function (err, answersObj) {
+			Question.findOne(1).populate('answers').exec(function (err, answersObj) {
 				res.view({
 					question: question,
 					answers: answersObj.answers
@@ -32,9 +32,7 @@ module.exports = {
 			res.redirect('/');
 			return;
 		}
-		console.log("hello in the create action!");
-		console.log(req.param('question').title);
-		console.log(req.param('answer').title);
+
 		Question.create({ title: req.param('question').title, user: req.param('question').user }).exec(function (err, question) {
 			if (err) {
 				console.log(err);
