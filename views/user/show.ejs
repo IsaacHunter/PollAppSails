@@ -12,9 +12,14 @@
 			<ul class="list-group questions">
 				<% questions.forEach(function (question, index) { %>
 					<li class="list-group-item">
-						<p class="question-item">
-							<%- index + 1 %>: <%- question.title %> <a href="/question/<%- question.id %>" class="results-link">See results</a>
-						</p>
+						<div class="row question-item">
+							<div class="col-xs-9">
+								<p><%- index + 1 %>: <%- question.title %></p>
+							</div>
+							<div class="col-xs-3">
+								<a href="/question/<%- question.id %>" class="results-link">See results</a>
+							</div>
+						</div>
 					</li>
 				<% }) %>
 			</ul>

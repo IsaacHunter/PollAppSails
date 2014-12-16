@@ -2,7 +2,7 @@ ul.questions {
 	margin-top: 10px;
 }
 
-p.question-item {
+div.question-item p {
 	margin-bottom: 0;
 }
 
