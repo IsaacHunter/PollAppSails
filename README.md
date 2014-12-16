@@ -12,4 +12,4 @@ Once you are ready, you can start the server by navigating to the folder in the 
 
 During starting the server you will get a prompt to choose the type of migration. The first time choose 3, so that you will use the seed data that I provide in the project. If you want to keep the data, choose 1.
 
-By Llorenç Muntaner
+If you run into trouble, try installing sails in your computer ```npm install sails -g```.
