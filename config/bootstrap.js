@@ -14,6 +14,7 @@ module.exports.bootstrap = function(cb) {
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
 	
+	
 	User.create({email:"email@email.com", password:"password"}).exec(function (err, user) {
 		Question.create({user: user.id, title:"Is Austin the coolest city ever?"}).exec(function (err, question) {
 			Answer.create({question: question.id, title:"YEEAAHH"}).exec(function (err, answer) {
@@ -30,9 +31,10 @@ module.exports.bootstrap = function(cb) {
 		Question.create({user: user.id, title:"Majorca or Austin??"}).exec(function (err, question) {
 			Answer.create({question: question.id, title:"None! San Francisco!"}).exec(function (err, answer) {
 				Answer.create({question: question.id, title:"They are both Awesome!"}).exec(function (err, answer) {					
-					cb();
 				});
 			});
 		});
 	});
+	
+	cb();
 };

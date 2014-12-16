@@ -81,7 +81,9 @@ module.exports = {
 			}
 			
 			req.param('answer').title.forEach( function (title) {
-				question.answers.add({ title: title});
+				Answer.create({ title: title, question: question.id }).exec(function (err, answer) {
+					console.log(answer);
+				});
 			})
 			res.redirect('/user/show/' + req.session.User.id);
 		});
