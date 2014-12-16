@@ -36,6 +36,13 @@ module.exports = {
 			var randomIndex = parseInt((Math.random() * questions.length) + 1);
 			
 			while (respondedIds.some(function (id) { return id == randomIndex })) {
+				if (num_questions === respondedIds.length) {
+					res.view({
+						question: {},
+						answers: {}
+					});
+					return;
+				}
 				randomIndex = parseInt((Math.random() * questions.length) + 1);
 			}
 		
