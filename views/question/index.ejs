@@ -9,14 +9,19 @@
   </div>
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
-      <h3 class=""><%- question.title %></h3>
-			<div class="answers-home list-group">
-				<% answers.forEach(function (answer, index) { %>
-					<a href="<%- 'answer/' + answer.id %>" class="list-group-item">
-						<%- index + 1 %>: <%- answer.title %>
-					</a>
-				<% }) %>
-			</div>
+			<% if (question.title) { %>
+	      <h3 class=""><%- question.title %></h3>
+				<div class="answers-home list-group">
+					<% answers.forEach(function (answer, index) { %>
+						<a href="<%- 'answer/' + answer.id %>" class="list-group-item">
+							<%- index + 1 %>: <%- answer.title %>
+						</a>
+					<% }) %>
+				</div>
+				<a href="/" class="btn btn-link">Another question</a>
+			<% } else { %>
+				<h3>No more questions!</h3>
+			<% } %>
     </div>
   </div>
 </div>
