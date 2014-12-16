@@ -37,9 +37,7 @@ module.exports = {
 					res.redirect('/');
 				} else {
 					QuestionIp.create(paramsQuIp).exec(function (err, questionIp) {
-						console.log(questionIp);
 						AnswerChoice.create(paramsAnsChoice).exec(function (err, ansChoice) {
-							console.log(ansChoice);
 							console.log('Vote accepted');
 							res.redirect('/');
 						})

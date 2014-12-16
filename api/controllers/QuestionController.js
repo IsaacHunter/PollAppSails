@@ -8,10 +8,10 @@
 module.exports = {
 	
 	'index': function (req, res) {
+		var userIp = req.connection.remoteAddress;
 		
 		function renderQuestion (err, questions) {
 			var num_questions = questions.length;
-			var userIp = req.connection.remoteAddress;
 			var randomIndex = parseInt((Math.random() * questions.length) + 1);
 		
 			Question.findOne(randomIndex).exec(function (err, question) {
@@ -26,7 +26,32 @@ module.exports = {
 			});
 		}
 		
-		Question.find().exec(renderQuestion);
+		QuestionIp.find({ ip: userIp }).exec( function (err, questionIps) {
+			var respondedIds = [];
+			questionIps.forEach( function (questionIp) {
+				respondedIds.push(questionIp.question);
+			});
+			Question.find().exec(function (err, questions) {
+			var num_questions = questions.length;
+			var randomIndex = parseInt((Math.random() * questions.length) + 1);
+			
+			while (respondedIds.some(function (id) { return id == randomIndex })) {
+				randomIndex = parseInt((Math.random() * questions.length) + 1);
+			}
+		
+			Question.findOne(randomIndex).exec(function (err, question) {
+				if (err) return next(err);
+							
+				Question.findOne(randomIndex).populate('answers').exec(function (err, answersObj) {
+					res.view({
+						question: question,
+						answers: answersObj.answers
+					});				
+				})
+			});
+		});			
+		});
+		
 	},
 	
 	'new': function (req, res) {
