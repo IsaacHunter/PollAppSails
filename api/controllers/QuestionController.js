@@ -8,19 +8,25 @@
 module.exports = {
 	
 	'index': function (req, res) {
-		var randomIndex = (Math.random() * 10) + 1
 		
-		Question.findOne(1).exec(function (err, question) {
-			if (err) return next(err);
-			
-			Question.findOne(1).populate('answers').exec(function (err, answersObj) {
-				res.view({
-					question: question,
-					answers: answersObj.answers
-				});				
-			})
-
-		});
+		function renderQuestion (err, questions) {
+			var num_questions = questions.length;
+			var userIp = req.connection.remoteAddress;
+			var randomIndex = parseInt((Math.random() * questions.length) + 1);
+		
+			Question.findOne(randomIndex).exec(function (err, question) {
+				if (err) return next(err);
+							
+				Question.findOne(randomIndex).populate('answers').exec(function (err, answersObj) {
+					res.view({
+						question: question,
+						answers: answersObj.answers
+					});				
+				})
+			});
+		}
+		
+		Question.find().exec(renderQuestion);
 	},
 	
 	'new': function (req, res) {

@@ -34,6 +34,16 @@ module.exports = {
 		Answer.find(id).populate('answerChoices').exec(function (err, ansChoicesObj) {
 			obj.result = ansChoicesObj[0].answerChoices.length;
 		});
+	},
+	
+	ips: function (id, Obj) {
+		var ips = [];
+		Answer.find(id).populate('answerChoices').exec(function (err, ansChoicesObj) {
+			ansChoicesObj[0].answerChoices.forEach( function (answerChoice) {
+				ips.push(answerChoice.ip);
+			});
+			Obj.ips = Obj.ips.concat(ips);
+		});
 	}
 	
 };

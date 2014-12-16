@@ -9,33 +9,44 @@ module.exports = {
 	
 	'create': function (req, res) {
 		var ipVoter = req.connection.remoteAddress;
-		var answerId = req.param('answerId')
-		var params = {
+		var answerId = req.param('answerId');
+		var paramsAnsChoice = {
 			answer: answerId,
 			ip: ipVoter
 		};
 		
-		AnswerChoice.find({ ip: ipVoter }).exec(function (err, ansChoices) {
-			console.log(ansChoices);
-			if ( ansChoices.all(function (ansChoice) { return ansChoice.answer != answerId }) ) {
-				AnswerChoice.create(params).exec(function (err, ansChoice) {
-					if (err) {
-						console.log(err);
-						res.redirect('/');
-						return
-					}
-			
-					console.log("Vote accepted");
-					res.redirect('/');
-					return;
-				});				
-			} else {
-				console.log('Not accepted!');
+		Answer.findOne(answerId).populate('question').exec( function (err, questionObj) {
+			if (err) {
+				console.log(err);
 				res.redirect('/');
 				return
 			}
+			var questionId = questionObj.question.id
+			
+			var paramsQuIp = {
+				question: questionId,
+				ip: ipVoter
+			};
+			
+			QuestionIp.find({ ip: ipVoter }).exec(function (err, questionIps) {
+				var responded = questionIps.some(function (questionIp) {
+					return questionIp.question === questionId;
+				});
+				if (responded) {
+					console.log("Vote NOT accepted");
+					res.redirect('/');
+				} else {
+					QuestionIp.create(paramsQuIp).exec(function (err, questionIp) {
+						console.log(questionIp);
+						AnswerChoice.create(paramsAnsChoice).exec(function (err, ansChoice) {
+							console.log(ansChoice);
+							console.log('Vote accepted');
+							res.redirect('/');
+						})
+					});
+				}
+			});
 		});
-		
 	}
 	
 };

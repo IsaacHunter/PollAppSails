@@ -26,8 +26,22 @@ module.exports = {
 		answers: {
 			collection: 'answer',
 			via: 'question'
-		}
+		},
 		
-	}
+		ips: {
+			collection: 'QuestionIp',
+			via: 'question'
+		},
+		
+	},
+	
+	answerChoicesIps: function (id, Obj) {
+		Obj.ips = [];
+		Question.find(id).populate('answers').exec( function (err, answersObj) {
+			answersObj[0].answers.forEach( function (answer) {
+				Answer.ips(answer.id, Obj);
+			});
+		});
+	},
 };
 
