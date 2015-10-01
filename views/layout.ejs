@@ -76,6 +76,13 @@
     a {
         cursor: pointer;
     }
+    .row:before, .row:after {
+      display:table;
+      content:" ";
+    }
+    .row:after {
+      clear: both;
+    }
     .burger-buns{
       padding: 80px 0;
     }
