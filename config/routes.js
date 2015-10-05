@@ -51,11 +51,16 @@ module.exports.routes = {
 		controller: 'AnswerChoiceController',
 		action: 'create'
 	},
+
+	'/voted': {
+		controller: 'QuestionController',
+		action: 'voted'
+	},
 	
-  '/': {
-    controller: 'QuestionController',
+	'/': {
+		controller: 'QuestionController',
 		action: 'index'
-  }
+	}
 
 
   /***************************************************************************

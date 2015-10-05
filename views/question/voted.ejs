@@ -84,3 +84,14 @@ $('a').click(function() {
     return false;
 });
 </script>
+
+<% if (!question.title) { %>
+<script>
+var $root = $('html, body');
+$root.animate({
+    scrollTop: $( '#designs' ).offset().top
+}, 0);
+
+swal("Thank you for voting!", "Check back next Thursday for another NHL logo re-design!", "success")
+</script>
+<% } %>
