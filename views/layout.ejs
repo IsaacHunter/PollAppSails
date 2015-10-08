@@ -77,12 +77,9 @@
     a {
         cursor: pointer;
     }
-    .row:before, .row:after {
-      display:table;
-      content:" ";
-    }
-    .row:after {
-      clear: both;
+    hr {
+      margin-top: 10rem;
+      margin-bottom: 10.5rem;
     }
     .burger-buns{
       padding: 80px 0;
@@ -122,8 +119,25 @@
     .portrait {
       height: auto;
       max-width: 175px;
+      width: 100%;
       margin: 0 auto;
       display: block;
+    }
+    .last-week-img {
+      margin: 0 auto;
+      display: block;
+      border-radius: 10px;
+    }
+    .runner-up {
+      height: auto;
+      max-width: 100px;
+      width: 100%;
+      opacity: .6;
+    }
+    .winner {
+      height: auto;
+      max-width: 220px;
+      width: 100%;
     }
     .title {
       font-size: 13px;
@@ -145,11 +159,25 @@
         .gt-badge {
             padding-left: 15%;
         }
+        .runner-up{
+          margin-top: 50px;
+        }
     }
     @media (min-width: 550px) {
         .four.columns {
             width: 33.33333333%;
         }
+        .gt-results .gt-one {
+          left: 30.666667%;
+          position: relative;
+          margin-left: 4%;
+        }
+        .gt-results .gt-two {
+          position: relative;
+          left: -34.6666666667%;
+          margin-left: 0;
+        }
+        
     }
     
     .sweet-alert button {
