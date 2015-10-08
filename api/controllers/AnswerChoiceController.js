@@ -5,10 +5,12 @@
  * @help        :: See http://links.sailsjs.org/docs/controllers
  */
 
+ var get_ip = require('ipware')().get_ip;
+
 module.exports = {
 	
 	'create': function (req, res) {
-		var ipVoter = req.connection.remoteAddress;
+		var ipVoter  = get_ip(req).clientIp;
 		var answerId = req.param('answerId');
 		var paramsAnsChoice = {
 			answer: answerId,
@@ -29,9 +31,11 @@ module.exports = {
 			};
 			
 			QuestionIp.find({ ip: ipVoter }).exec(function (err, questionIps) {
+				
 				var responded = questionIps.some(function (questionIp) {
 					return questionIp.question === questionId;
 				});
+			
 				if (responded) {
 					console.log("Vote NOT accepted");
 					res.redirect('/');

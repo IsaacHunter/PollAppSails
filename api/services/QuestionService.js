@@ -1,6 +1,8 @@
+var get_ip = require('ipware')().get_ip;
+
 module.exports = {
 	showIndex: function (req, res) {
-		var userIp = req.connection.remoteAddress;
+		var userIp = get_ip(req).clientIp;
 		
 		function renderQuestion (err, questions) {
 			var num_questions = questions.length;
