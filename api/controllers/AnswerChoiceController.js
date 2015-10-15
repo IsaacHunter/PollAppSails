@@ -42,6 +42,7 @@ module.exports = {
 				// } else {
 					QuestionIp.create(paramsQuIp).exec(function (err, questionIp) {
 						AnswerChoice.create(paramsAnsChoice).exec(function (err, ansChoice) {
+							res.cookie('voted', 'w3', { maxAge: 900000, httpOnly: true })
 							console.log('Vote accepted');
 							res.redirect('/voted');
 						})
