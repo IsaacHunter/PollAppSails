@@ -22,9 +22,9 @@ module.exports = {
 		
 		QuestionIp.find({ ip: userIp }).exec( function (err, questionIps) {
 			var respondedIds = [];
-			questionIps.forEach( function (questionIp) {
-				respondedIds.push(questionIp.question);
-			});
+			// questionIps.forEach( function (questionIp) {
+			// 	respondedIds.push(questionIp.question);
+			// });
 			Question.find().exec(function (err, questions) {
 			var num_questions = questions.length;
 			var randomIndex = parseInt((Math.random() * questions.length) + 1);

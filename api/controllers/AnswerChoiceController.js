@@ -32,21 +32,21 @@ module.exports = {
 			
 			QuestionIp.find({ ip: ipVoter }).exec(function (err, questionIps) {
 				
-				var responded = questionIps.some(function (questionIp) {
-					return questionIp.question === questionId;
-				});
+				// var responded = questionIps.some(function (questionIp) {
+				// 	return questionIp.question === questionId;
+				// });
 			
-				if (responded) {
-					console.log("Vote NOT accepted");
-					res.redirect('/');
-				} else {
+				// if (responded) {
+				// 	console.log("Vote NOT accepted");
+				// 	res.redirect('/');
+				// } else {
 					QuestionIp.create(paramsQuIp).exec(function (err, questionIp) {
 						AnswerChoice.create(paramsAnsChoice).exec(function (err, ansChoice) {
 							console.log('Vote accepted');
 							res.redirect('/voted');
 						})
 					});
-				}
+				// }
 			});
 		});
 	}
