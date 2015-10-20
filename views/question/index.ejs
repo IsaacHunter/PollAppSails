@@ -77,15 +77,18 @@
     <div class="row u-full-width">
       <div class="one-third column gt-name">
         <img class="img-circle portrait u-max-full-width" src="/images/landon.jpg">
-        <p class="title">Landon</p>
+        <p class="title gt-title">Landon</p>
+        <p class="title hidden">&nbsp;</p>
       </div>
       <div class="one-third column gt-name">
         <img class="img-circle portrait u-max-full-width" src="/images/isaac.jpg">
-        <p class="title">Isaac</p>
+        <p class="title gt-title">Isaac</p>
+        <p class="title hidden">&nbsp;</p>
       </div>
       <div class="one-third column gt-name">
         <img class="img-circle portrait u-max-full-width" src="/images/austin.jpg">
-        <p class="title">Austin</p>
+        <p class="title gt-title">Austin</p>
+        <p class="title hidden">&nbsp;</p>
       </div>
     </div>
 
@@ -151,6 +154,22 @@
   </div>
 </div>
 
+<div class="gt-fixed-container hidden">
+  <div class="container">
+    <div class="row u-full-width">
+      <div class="one-third column">
+        <p class="title">Landon</p>
+      </div>
+      <div class="one-third column">
+        <p class="title">Isaac</p>
+      </div>
+      <div class="one-third column">
+        <p class="title">Austin</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script>
 var $root = $('html, body');
@@ -162,13 +181,17 @@ $('a').click(function() {
 });
 $(window).scroll(function(e) {
   var s = $(".gt-name");
+  var f = $(".gt-fixed-container");
   var pos = s.offset();      
   var windowpos = $(window).scrollTop();
   var img = $(".gt-name img.portrait");
-  if (windowpos >= pos.top - 100 + img.height()) {
+  var p = $(".gt-name p.title")
+  if (windowpos >= pos.top + 210 + img.height() + p.height() - $(window).height() ) {
         s.addClass("gt-name-fixed");
+        f.removeClass("hidden");
     } else {
         s.removeClass("gt-name-fixed"); 
+        f.addClass("hidden");
     }
 });
 </script>
