@@ -71,21 +71,81 @@
         </div>
       </div>
 
-      <hr>
+    <hr>
 
     <h6>The Designers</h6>
     <div class="row u-full-width">
-      <div class="one-third column">
+      <div class="one-third column gt-name">
         <img class="img-circle portrait u-max-full-width" src="/images/landon.jpg">
         <p class="title">Landon</p>
       </div>
-      <div class="one-third column">
+      <div class="one-third column gt-name">
         <img class="img-circle portrait u-max-full-width" src="/images/isaac.jpg">
         <p class="title">Isaac</p>
       </div>
-      <div class="one-third column">
+      <div class="one-third column gt-name">
         <img class="img-circle portrait u-max-full-width" src="/images/austin.jpg">
         <p class="title">Austin</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h6>Past Designs</h6>
+    <br />
+    <br />
+    <h6>Week Two</h6>
+    <div class="row u-full-width">
+      <div class="one-third column">
+        <p>&nbsp;</p>
+      </div>
+      <div class="one-third column">
+        <img class="portrait u-max-full-width" src="/images/Buffalo_Sabres_Logo.svg">
+      </div>
+      <div class="one-third column">
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="row u-full-width">
+      <div class="one-third column">
+        <img class="portrait u-max-full-width" src="/images/w2design1.jpg">
+      </div>
+      <div class="one-third column">
+        <img class="portrait u-max-full-width" src="/images/w2design0.jpg">
+        <p class="title">Winner</p>
+      </div>
+      <div class="one-third column">
+        <img class="portrait u-max-full-width" src="/images/w2design2.jpg">
+      </div>
+    </div>
+    <br />
+    <br />
+    <h6>Week One</h6>
+    <div class="row u-full-width">
+      <div class="one-third column">
+        <p>&nbsp;</p>
+      </div>
+      <div class="one-third column">
+        <img class="portrait u-max-full-width" src="/images/Logo_Edmonton_Oilers.svg">
+      </div>
+      <div class="one-third column">
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="row u-full-width">
+      <div class="one-third column">
+        <img class="portrait u-max-full-width" src="/images/design0.jpg">
+      </div>
+      <div class="one-third column">
+        <img class="portrait u-max-full-width" src="/images/design2.jpg">
+        <p class="title">Winner</p>
+      </div>
+      <div class="one-third column">
+        <img class="portrait u-max-full-width" src="/images/design1.jpg">
       </div>
     </div>
   </div>
@@ -99,5 +159,16 @@ $('a').click(function() {
         scrollTop: $( $.attr(this, 'href') ).offset().top
     }, 500);
     return false;
+});
+$(window).scroll(function(e) {
+  var s = $(".gt-name");
+  var pos = s.offset();      
+  var windowpos = $(window).scrollTop();
+  var img = $(".gt-name img.portrait");
+  if (windowpos >= pos.top - 100 + img.height()) {
+        s.addClass("gt-name-fixed");
+    } else {
+        s.removeClass("gt-name-fixed"); 
+    }
 });
 </script>
