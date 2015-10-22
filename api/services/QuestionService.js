@@ -32,7 +32,7 @@ module.exports = {
 			//while (respondedIds.some(function (id) { return id == randomIndex })) {
 			//	if (num_questions === respondedIds.length) {
 				console.log(req.cookies);
-				if (req.cookies.voted === "w3") {
+				if (req.cookies.voted === "w4") {
 					res.view({
 						question: {},
 						answers: {}
