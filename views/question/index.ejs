@@ -11,159 +11,80 @@
         <a href="#designs" class="button">See the designs</a>
       </div>
       <div class="one-half column gt-badge" style="">
-        <img alt="" src="/images/Arizona_Coyotes_Logo.PNG" width="300" height="300" data-file-width="1939" data-file-height="1939">
-        <h6>week three<br/><b>Arizona Coyotes</b></h6>
+        <img alt="" src="/images/Toronto_Maple_Leafs_logo.svg" width="300" height="300" data-file-width="1939" data-file-height="1939">
+        <h6>week four<br/><b>Toronto Maple Leafs</b></h6>
       </div>
     </div>
   </div>
 <div class="main clearfix" style="margin-top: 10%; background:#f5f5f5" id="designs">
   <div class="container burger-buns">
-	<% if (question.title) { %>
-		<h6>This Week's Designs</h6>
-		<div class="row u-full-width gt-design-container">
-		<% answers.forEach(function (answer, index) { %>
-		  <div class="one-third column ballot">
-		    <div class="thumbnail">
-		      <img class="u-max-full-width" src="/images/w3design<%- index %>.jpg">
-		    </div>
-		    <a href="<%- 'answer/' + answer.id %>" class="button button-primary">Vote</a>
-		  </div>
-		<% }) %>
-		</div>
-		<p class="footer">• The order of designs is not related to the order of designers below •</p>
+  <% if (question.title) { %>
+    <h6>This Week's Designs</h6>
+    <div class="row u-full-width gt-design-container">
+    <% answers.forEach(function (answer, index) { %>
+      <div class="one-third column ballot">
+        <div class="thumbnail">
+          <img class="u-max-full-width" src="/images/w4design<%- index %>.jpg">
+        </div>
+        <a href="<%- 'answer/' + answer.id %>" class="button button-primary">Vote</a>
+      </div>
+    <% }) %>
+    </div>
+    <p class="footer">• The order of designs is not related to the order of designers below •</p>
     <% } else { %>
-		<h6>Thank you for voting! Check back next Thursday for another NHL logo re-design.</h6>
-		<div class="row u-full-width">
-		  <div class="one-third column ballot">
-		    <div class="thumbnail">
-		      <img class="u-max-full-width" src="/images/w3design0.jpg">
-		    </div>
-		  </div>
-		  <div class="one-third column ballot">
-		    <div class="thumbnail">
-		      <img class="u-max-full-width" src="/images/w3design1.jpg">
-		    </div>
-		  </div>
-		  <div class="one-third column ballot">
-		    <div class="thumbnail">
-		      <img class="u-max-full-width" src="/images/w3design2.jpg">
-		    </div>
-		  </div>
-	  	</div>
-	<% } %>
+    <h6>Thank you for voting! Check back next Thursday for another NHL logo re-design.</h6>
+    <div class="row u-full-width">
+      <div class="one-third column ballot">
+        <div class="thumbnail">
+          <img class="u-max-full-width" src="/images/w4design0.jpg">
+        </div>
+      </div>
+      <div class="one-third column ballot">
+        <div class="thumbnail">
+          <img class="u-max-full-width" src="/images/w4design1.jpg">
+        </div>
+      </div>
+      <div class="one-third column ballot">
+        <div class="thumbnail">
+          <img class="u-max-full-width" src="/images/w4design2.jpg">
+        </div>
+      </div>
+      </div>
+  <% } %>
   </div>
 </div>
 <div class="clearfix">
   <div class="container burger-buns">
-    <h6>Last Week's Winner</h6>
+        <h6>Last Week's Winner</h6>
       <div class="row u-full-width gt-results">
         <div class="one-third column gt-one">
-          <img class="last-week-img winner u-max-full-width" src="/images/w2design0.jpg">
-          <p class="title">Isaac</p>
-        </div>
-        <div class="one-third column gt-two">
-          <img class="last-week-img runner-up u-max-full-width" src="/images/w2design1.jpg">
+          <img class="last-week-img winner u-max-full-width" src="/images/w3design2.jpg">
           <p class="title">Landon</p>
         </div>
-        <div class="one-third column">
-          <img class="last-week-img runner-up u-max-full-width" src="/images/w2design2.jpg">
+        <div class="one-third column gt-two">
+          <img class="last-week-img runner-up u-max-full-width" src="/images/w3design0.jpg">
           <p class="title">Austin</p>
+        </div>
+        <div class="one-third column">
+          <img class="last-week-img runner-up u-max-full-width" src="/images/w3design1.jpg">
+          <p class="title">Isaac</p>
         </div>
       </div>
 
-    <hr>
+      <hr>
 
     <h6>The Designers</h6>
     <div class="row u-full-width">
-      <div class="one-third column gt-name">
+      <div class="one-third column">
         <img class="img-circle portrait u-max-full-width" src="/images/landon.jpg">
-        <p class="title gt-title">Landon</p>
-        <p class="title hidden">&nbsp;</p>
-      </div>
-      <div class="one-third column gt-name">
-        <img class="img-circle portrait u-max-full-width" src="/images/isaac.jpg">
-        <p class="title gt-title">Isaac</p>
-        <p class="title hidden">&nbsp;</p>
-      </div>
-      <div class="one-third column gt-name">
-        <img class="img-circle portrait u-max-full-width" src="/images/austin.jpg">
-        <p class="title gt-title">Austin</p>
-        <p class="title hidden">&nbsp;</p>
-      </div>
-    </div>
-
-    <hr>
-
-    <h6>Past Designs</h6>
-    <br />
-    <br />
-    <h6>Week Two</h6>
-    <div class="row u-full-width">
-      <div class="one-third column">
-        <p>&nbsp;</p>
-      </div>
-      <div class="one-third column">
-        <img class="portrait u-max-full-width" src="/images/Buffalo_Sabres_Logo.svg">
-      </div>
-      <div class="one-third column">
-        <p>&nbsp;</p>
-      </div>
-    </div>
-    <br />
-    <br />
-    <div class="row u-full-width">
-      <div class="one-third column">
-        <img class="portrait u-max-full-width" src="/images/w2design1.jpg">
-      </div>
-      <div class="one-third column">
-        <img class="portrait u-max-full-width" src="/images/w2design0.jpg">
-        <p class="title">Winner</p>
-      </div>
-      <div class="one-third column">
-        <img class="portrait u-max-full-width" src="/images/w2design2.jpg">
-      </div>
-    </div>
-    <br />
-    <br />
-    <h6>Week One</h6>
-    <div class="row u-full-width">
-      <div class="one-third column">
-        <p>&nbsp;</p>
-      </div>
-      <div class="one-third column">
-        <img class="portrait u-max-full-width" src="/images/Logo_Edmonton_Oilers.svg">
-      </div>
-      <div class="one-third column">
-        <p>&nbsp;</p>
-      </div>
-    </div>
-    <br />
-    <br />
-    <div class="row u-full-width">
-      <div class="one-third column">
-        <img class="portrait u-max-full-width" src="/images/design0.jpg">
-      </div>
-      <div class="one-third column">
-        <img class="portrait u-max-full-width" src="/images/design2.jpg">
-        <p class="title">Winner</p>
-      </div>
-      <div class="one-third column">
-        <img class="portrait u-max-full-width" src="/images/design1.jpg">
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="gt-fixed-container hidden">
-  <div class="container">
-    <div class="row u-full-width">
-      <div class="one-third column">
         <p class="title">Landon</p>
       </div>
       <div class="one-third column">
+        <img class="img-circle portrait u-max-full-width" src="/images/isaac.jpg">
         <p class="title">Isaac</p>
       </div>
       <div class="one-third column">
+        <img class="img-circle portrait u-max-full-width" src="/images/austin.jpg">
         <p class="title">Austin</p>
       </div>
     </div>
@@ -178,20 +99,5 @@ $('a').click(function() {
         scrollTop: $( $.attr(this, 'href') ).offset().top
     }, 500);
     return false;
-});
-$(window).scroll(function(e) {
-  var s = $(".gt-name");
-  var f = $(".gt-fixed-container");
-  var pos = s.offset();      
-  var windowpos = $(window).scrollTop();
-  var img = $(".gt-name img.portrait");
-  var p = $(".gt-name p.title")
-  if (windowpos >= pos.top + 210 + img.height() + p.height() - $(window).height() ) {
-        s.addClass("gt-name-fixed");
-        f.removeClass("hidden");
-    } else {
-        s.removeClass("gt-name-fixed"); 
-        f.addClass("hidden");
-    }
 });
 </script>
