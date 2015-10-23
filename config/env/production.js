@@ -17,9 +17,16 @@ module.exports = {
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
 
-  // models: {
-  //   connection: 'someMysqlServer'
-  // },
+  connections: {
+    someMysqlServer: {
+      module: 'sails-mysql',
+      host: 'localhost',
+      port: 3306,
+      user: 'root',
+      password: 'Open10Heaven',
+      database: 'pollapp'
+    }
+  }
 
   /***************************************************************************
    * Set the port in the production environment to 80                        *

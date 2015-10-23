@@ -17,8 +17,15 @@ module.exports = {
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
 
-  // models: {
-  //   connection: 'someMongodbServer'
-  // }
+	connections: {
+		someMysqlServer: {
+			module: 'sails-mysql',
+			host: '159.203.2.0',
+			port: 3306,
+			user: 'root',
+			password: 'Open10Heaven',
+			database: 'pollappdev'
+		}
+  }
 
 };
