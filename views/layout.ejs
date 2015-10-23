@@ -159,22 +159,35 @@
     .white {
       color: #fff;
     }
-    .gt-name-fixed p.hidden {
-      display: block;
+    .gt-past-designs {
+      font-size: 1.25rem;
     }
-    .gt-name-fixed p.gt-title {
-      display: none;
+    .gt-past-designs a {
+      text-decoration: none;
+      padding: 2px;
+      color: #ddd;
+      cursor: default;
     }
-    .gt-fixed-container {
-      position: fixed;
-      bottom: 200px;
-      width: 100%;
+    .gt-past-designs a:hover {
+      color: #ddd;
     }
-    .gt-fixed-container p.title {
-      /*background: #333;
-      color: #fff;*/
-      margin-bottom: 0;
+    .gt-past-designs a.gt-designed {
+      color: #939393;
+      font-weight: 400;
+      cursor: pointer;
     }
+    .gt-past-designs a.gt-designed:hover {
+      color: #333;
+      font-weight: bold;
+    }
+    .gt-past-designs a.active {
+      color: #333;
+      font-weight: bold;
+    }
+    .gt-past-designs a.active:hover {
+      color: #333;
+    }
+
     @media (min-width: 768px) {
         .gt-badge {
             padding-left: 15%;

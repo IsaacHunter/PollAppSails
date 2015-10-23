@@ -55,7 +55,39 @@
 </div>
 <div class="clearfix">
   <div class="container burger-buns">
-        <h6>Last Week's Winner</h6>
+        <h6>Past Designs</h6>
+        <h6 class="gt-past-designs">
+          <a href="#designw1">EDM</a>
+          <a href="#designw2">BUF</a>
+          <a href="#designw3">ARI</a>
+          <a href="#designw4">TOR</a>
+          <a href="#designw5">CAR</a>
+          <a href="#designw6">NJD</a>
+          <a href="#designw7">PHI</a>
+          <a href="#designw8">CBJ</a>
+          <a href="#designw9">SJS</a>
+          <a href="#designw10">COL</a>
+          <a href="#designw11">FLA</a>
+          <a href="#designw12">DAL</a>
+          <a href="#designw13">LAK</a>
+          <a href="#designw14">BOS</a>
+          <a href="#designw15">CGY</a>
+          <a href="#designw16">PIT</a>
+          <a href="#designw17">WPG</a>
+          <a href="#designw18">OTT</a>
+          <a href="#designw19">DET</a>
+          <a href="#designw20">MIN</a>
+          <a href="#designw21">NYI</a>
+          <a href="#designw22">WSH</a>
+          <a href="#designw23">VAN</a>
+          <a href="#designw24">NSH</a>
+          <a href="#designw25">STL</a>
+          <a href="#designw26">MTL</a>
+          <a href="#designw27">ANA</a>
+          <a href="#designw28">NYR</a>
+          <a href="#designw29">TBL</a>
+          <a href="#designw30">CHI</a>
+        </h6>
       <div class="row u-full-width gt-results">
         <div class="one-third column gt-one">
           <img class="last-week-img winner u-max-full-width" src="/images/w3design2.jpg">
@@ -94,10 +126,51 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script>
 var $root = $('html, body');
+var w = 4;
+var results = [
+  [1, 0, 2],
+  ['Austin', 'Isaac', 'Landon'],
+  ['Isaac', 'Landon', 'Austin'],
+  ['Landon', 'Austin', 'Isaac']
+]
+
+function showPastDesigns(week) {
+  $('.gt-past-designs a').each( function(index) {
+    if (week == index + 1) {
+      $(this).addClass("active");
+    } else if (index < w) {
+      $(this).removeClass("active").addClass("gt-designed");
+    } else {
+      return false;
+    }
+  });
+  var count = results[0][week-1];
+  $('.gt-results .column').each( function(index) {
+    $(this).find('p.title').text(results[week][index]);
+    $(this).find('img.last-week-img').attr('src', '/images/w'+week+'design'+count+'.jpg')
+    if (2 < ++count) {
+      count = 0;
+    }
+  });
+}
+
 $('a').click(function() {
-    $root.animate({
-        scrollTop: $( $.attr(this, 'href') ).offset().top
-    }, 500);
+    var href = $.attr(this, 'href');
+    if (href == ('#designw' + w)) {
+      href = "#designs"
+    }
+    if (href.startsWith('#designw')) {
+      var desiredWeek = href.replace('#designw', '');
+      if (!$(this).hasClass('active') && desiredWeek <= w) {
+        showPastDesigns(desiredWeek);
+      }
+    } else {
+      $root.animate({
+          scrollTop: $( href ).offset().top
+      }, 500);
+    }
     return false;
 });
+
+showPastDesigns(w-1);
 </script>
