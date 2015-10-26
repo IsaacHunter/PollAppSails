@@ -1,0 +1,37 @@
+<div class="main clearfix" style="margin-top: 10%; background:#f5f5f5" id="designs">
+  <div class="container burger-buns">
+  <% if (question.title) { %>
+    <h6>This Week's Designs</h6>
+    <div class="row u-full-width gt-design-container">
+    <% answers.forEach(function (answer, index) { %>
+      <div class="one-third column ballot">
+        <div class="thumbnail">
+          <img class="u-max-full-width" src="/images/w<%- sails.config.gt.week %>design<%- index %>.jpg">
+        </div>
+        <a href="<%- 'answer/' + answer.id %>" class="button button-primary">Vote</a>
+      </div>
+    <% }) %>
+    </div>
+    <p class="footer">• The order of designs is not related to the order of designers below •</p>
+    <% } else { %>
+    <h6>Thank you for voting! Check back next Thursday for another NHL logo re-design.</h6>
+    <div class="row u-full-width">
+      <div class="one-third column ballot">
+        <div class="thumbnail">
+          <img class="u-max-full-width" src="/images/w<%- sails.config.gt.week %>design0.jpg">
+        </div>
+      </div>
+      <div class="one-third column ballot">
+        <div class="thumbnail">
+          <img class="u-max-full-width" src="/images/w<%- sails.config.gt.week %>design1.jpg">
+        </div>
+      </div>
+      <div class="one-third column ballot">
+        <div class="thumbnail">
+          <img class="u-max-full-width" src="/images/w<%- sails.config.gt.week %>design2.jpg">
+        </div>
+      </div>
+      </div>
+  <% } %>
+  </div>
+</div>

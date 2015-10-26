@@ -1,0 +1,16 @@
+<div class="topper">
+  <img src="/images/gt.png" class="gt-logo"/>
+</div>
+<div class="container" style="min-height:80vh">
+  <div class="row">
+    <div class="one-half column" style="margin-top: 25%">
+      <h4>The Greater Than Challenge</h4>
+      <p>Every week we release three minimalist re-designs of a classic NHL logo. Now we need you to tell us which design is the best! Vote to tell us which logo is <b>greater than</b> the others</p>
+      <a href="#designs" class="button">See the designs</a>
+    </div>
+    <div class="one-half column gt-badge" style="">
+      <img alt="" src="/images/<%= sails.config.gt.teamListImg[sails.config.gt.week] %>" width="300" height="300" data-file-width="1939" data-file-height="1939">
+      <h6>week <%= sails.config.gt.numberToString[sails.config.gt.week] %><br/><b><%= sails.config.gt.fullTeamList[sails.config.gt.week] %></b></h6>
+    </div>
+  </div>
+</div>

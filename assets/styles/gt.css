@@ -1,0 +1,184 @@
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Raleway Light'), local('Raleway-Light'), url(http://fonts.gstatic.com/s/raleway/v9/-_Ctzj9b56b8RgXW8FAriQzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), url(http://fonts.gstatic.com/s/raleway/v9/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Raleway SemiBold'), local('Raleway-SemiBold'), url(http://fonts.gstatic.com/s/raleway/v9/xkvoNo9fC8O2RDydKj12bwzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+body {
+  margin: 0;
+}
+h6, h4 {
+    color: #939393;
+}
+h6, .title {
+    text-transform: uppercase;
+    text-align: center;
+}
+b {
+    color: #222;
+}
+a {
+    cursor: pointer;
+}
+hr {
+  margin-top: 10rem;
+  margin-bottom: 10.5rem;
+}
+.hidden {
+  display: none;
+}
+.burger-buns{
+  padding: 80px 0;
+}
+.topper {
+    width: 100%;
+    padding: 6px 0;
+    background: #f0f0f0;
+}
+.gt-logo {
+    width: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.gt-badge {
+    margin-top: 22%;
+    text-align: center;
+}
+.thumbnail {
+    padding: 40px;
+    background: #fff;
+    border-radius: 5px;
+}
+.ballot .thumbnail {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.ballot .button {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  display: block;
+}
+.img-circle {
+  border-radius: 500px;
+}
+.portrait {
+  height: auto;
+  max-width: 175px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+.last-week-img {
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+}
+.runner-up {
+  height: auto;
+  max-width: 100px;
+  width: 100%;
+  opacity: .6;
+}
+.winner {
+  height: auto;
+  max-width: 220px;
+  width: 100%;
+}
+.title {
+  font-size: 13px;
+  letter-spacing: 2px;
+  padding: 5px 0;
+  margin-top: 10px;
+}
+.footer {
+  color: #bbbbbb; 
+  font-size: 11px; 
+  margin-top: 60px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.white {
+  color: #fff;
+}
+.gt-past-designs {
+  font-size: 1.25rem;
+}
+.gt-past-designs a {
+  text-decoration: none;
+  padding: 2px;
+  color: #ddd;
+  cursor: default;
+}
+.gt-past-designs a:hover {
+  color: #ddd;
+}
+.gt-past-designs a.gt-designed {
+  color: #939393;
+  font-weight: 400;
+  cursor: pointer;
+}
+.gt-past-designs a.gt-designed:hover {
+  color: #333;
+  font-weight: bold;
+}
+.gt-past-designs a.active {
+  color: #333;
+  font-weight: bold;
+}
+.gt-past-designs a.active:hover {
+  color: #333;
+}
+
+@media (min-width: 768px) {
+    .gt-badge {
+        padding-left: 15%;
+    }
+    .runner-up{
+      margin-top: 50px;
+    }
+}
+@media (min-width: 550px) {
+    .four.columns {
+        width: 33.33333333%;
+    }
+    .gt-results .gt-one {
+      left: 30.666667%;
+      position: relative;
+      margin-left: 4%;
+    }
+    .gt-results .gt-two {
+      position: relative;
+      left: -34.6666666667%;
+      margin-left: 0;
+    }
+    
+}
+
+.sweet-alert button {
+  height: auto;
+}
+/*
+.main img {
+  width: 33.33333333%;
+  float: left;
+}*/
