@@ -56,6 +56,11 @@ module.exports.routes = {
 		controller: 'QuestionController',
 		action: 'voted'
 	},
+
+	'/list': {
+		controller: 'QuestionController',
+		action: 'list'
+	},
 	
 	'/': {
 		controller: 'QuestionController',

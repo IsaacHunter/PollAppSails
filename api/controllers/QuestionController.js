@@ -15,6 +15,10 @@ module.exports = {
 	'voted': function (req, res) {
 		QuestionService.showIndex(req, res);		
 	},
+
+	'list': function (req, res) {
+		res.view('question/list', {message: 'Isaacs List!', layout: null});
+	},
 	
 	'new': function (req, res) {
 		res.view({
