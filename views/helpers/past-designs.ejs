@@ -37,6 +37,7 @@
         <div class="one-third column gt-one">
           <img class="last-week-img winner u-max-full-width" src="/images/w1design1.jpg">
           <p class="title">Austin</p>
+          <img class="" src="/images/trophy.png">
         </div>
         <div class="one-third column gt-two">
           <img class="last-week-img runner-up u-max-full-width" src="/images/w1design2.jpg">
@@ -72,7 +73,7 @@
 var $root = $('html, body');
 var w = <%- sails.config.gt.week %>;
 var results = [
-  [1, 0, 2, 1, 2, 0, 1, 2, 2],
+  [1, 0, 2, 1, 2, 0, 1, 2, 2, 2],
   ['Austin', 'Isaac', 'Landon'],
   ['Isaac', 'Landon', 'Austin'],
   ['Landon', 'Austin', 'Isaac'],
@@ -81,7 +82,8 @@ var results = [
   ['Austin', 'Isaac', 'Landon'],
   ['Landon', 'Austin', 'Isaac'],
   ['Austin', 'Isaac', 'Landon'],
-  ['Isaac', 'Austin', 'Landon']
+  ['Isaac', 'Austin', 'Landon'],
+  ['Landon', 'Austin', 'Isaac']
 ]
 
 function showPastDesigns(week) {

@@ -94,9 +94,8 @@ hr {
 }
 .runner-up {
   height: auto;
-  max-width: 100px;
+  max-width: 220px;
   width: 100%;
-  opacity: .6;
 }
 .winner {
   height: auto;
@@ -148,13 +147,16 @@ hr {
 .gt-past-designs a.active:hover {
   color: #333;
 }
+.gt-one {
+  text-align: center;
+}
 
 @media (min-width: 768px) {
     .gt-badge {
         padding-left: 15%;
     }
     .runner-up{
-      margin-top: 50px;
+
     }
 }
 @media (min-width: 550px) {
