@@ -1,5 +1,5 @@
 <div class="clearfix">
-  <div class="container burger-buns">
+  <div class="container burger-buns" id="pdesigns">
         <h6>Past Designs</h6>
         <h6 class="gt-past-designs">
           <a href="#designw1">EDM</a>
@@ -73,7 +73,7 @@
 var $root = $('html, body');
 var w = <%- sails.config.gt.week %>;
 var results = [
-  [1, 0, 2, 1, 2, 0, 1, 2, 2, 2, 1, 2, 1, 1, 0],
+  [1, 0, 2, 1, 2, 0, 1, 2, 2, 2, 1, 2, 1, 1, 0, 2],
   ['Austin', 'Isaac', 'Landon'],
   ['Isaac', 'Landon', 'Austin'],
   ['Landon', 'Austin', 'Isaac'],
@@ -88,14 +88,17 @@ var results = [
   ['Isaac', 'Austin', 'Landon'],
   ['Landon', 'Isaac', 'Austin'],
   ['Isaac', 'Austin', 'Landon'],
-  ['Austin', 'Isaac', 'Landon']
+  ['Austin', 'Isaac', 'Landon'],
+  ['Isaac', 'Landon', 'Austin']
 ]
 
 function showPastDesigns(week) {
   $('.gt-past-designs a').each( function(index) {
     if (week == index + 1) {
       $(this).addClass("active");
-    } else if (index < w) {
+    // } else if (index < w) {
+    // FOR ALL STAR
+    } else if (index < w - 1) {
       $(this).removeClass("active").addClass("gt-designed");
     } else {
       return false;
