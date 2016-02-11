@@ -19,7 +19,8 @@ var cssFilesToInject = [
     'styles/**/gt.css',
     'styles/**/importer.css',
     'styles/**/skeleton.css',
-    'styles/**/sweetalert.css'
+    'styles/**/sweetalert.css',
+    'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'
 ];
 
 
