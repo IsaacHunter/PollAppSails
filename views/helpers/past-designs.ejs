@@ -36,8 +36,11 @@
       <div class="row u-full-width gt-results">
         <div class="one-third column gt-one">
           <img class="last-week-img winner u-max-full-width" src="/images/w1design1.jpg">
-          <p class="title">Austin</p>
-          <img class="" src="/images/trophy.png">
+          <span class="title">Austin</span>
+          <span class="fa-stack fa-lg" style="color:#3DD3F9;">
+            <i class="fa fa-circle-thin fa-stack-2x"></i>
+            <i class="fa fa-trophy fa-stack-1x"></i>
+          </span>
         </div>
         <div class="one-third column gt-two">
           <img class="last-week-img runner-up u-max-full-width" src="/images/w1design2.jpg">
@@ -73,7 +76,7 @@
 var $root = $('html, body');
 var w = <%- sails.config.gt.week %>;
 var results = [
-  [1, 0, 2, 1, 2, 0, 1, 2, 2, 2, 1, 2, 1, 1, 0, 2],
+  [1, 0, 2, 1, 2, 0, 1, 2, 2, 2, 1, 2, 1, 1, 0, 2, 2],
   ['Austin', 'Isaac', 'Landon'],
   ['Isaac', 'Landon', 'Austin'],
   ['Landon', 'Austin', 'Isaac'],
@@ -89,16 +92,15 @@ var results = [
   ['Landon', 'Isaac', 'Austin'],
   ['Isaac', 'Austin', 'Landon'],
   ['Austin', 'Isaac', 'Landon'],
-  ['Isaac', 'Landon', 'Austin']
+  ['Isaac', 'Landon', 'Austin'],
+  ['Austin', 'Landon', 'Isaac']
 ]
 
 function showPastDesigns(week) {
   $('.gt-past-designs a').each( function(index) {
     if (week == index + 1) {
       $(this).addClass("active");
-    // } else if (index < w) {
-    // FOR ALL STAR
-    } else if (index < w - 1) {
+    } else if (index < w) {
       $(this).removeClass("active").addClass("gt-designed");
     } else {
       return false;
