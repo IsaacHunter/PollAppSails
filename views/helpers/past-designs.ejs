@@ -108,7 +108,7 @@ function showPastDesigns(week) {
   });
   var count = results[0][week-1];
   $('.gt-results .column').each( function(index) {
-    $(this).find('p.title').text(results[week][index]);
+    $(this).find('.title').text(results[week][index]);
     $(this).find('img.last-week-img').attr('src', '/images/w'+week+'design'+count+'.jpg')
     if (2 < ++count) {
       count = 0;
