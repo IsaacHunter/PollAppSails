@@ -76,7 +76,7 @@
 var $root = $('html, body');
 var w = <%- sails.config.gt.week %>;
 var results = [
-  [1, 0, 2, 1, 2, 0, 1, 2, 2, 2, 1, 2, 1, 1, 0, 2, 2, 1, 2, 1, 2],
+  [1, 0, 2, 1, 2, 0, 1, 2, 2, 2, 1, 2, 1, 1, 0, 2, 2, 1, 2, 1, 2, 0],
   ['Austin', 'Isaac', 'Landon'],
   ['Isaac', 'Landon', 'Austin'],
   ['Landon', 'Austin', 'Isaac'],
@@ -97,7 +97,8 @@ var results = [
   ['Austin', 'Landon', 'Isaac'],
   ['Austin', 'Landon', 'Isaac'],
   ['Austin', 'Landon', 'Isaac'],
-  ['Austin', 'Landon', 'Isaac']
+  ['Austin', 'Landon', 'Isaac'],
+  ['Isaac', 'Landon', 'Isaac']
 ]
 
 function showPastDesigns(week) {
