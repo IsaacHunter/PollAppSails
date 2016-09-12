@@ -19,6 +19,58 @@ module.exports = {
 	'list': function (req, res) {
 		res.view('question/list', {message: 'Isaacs List!', layout: null});
 	},
+
+	'ask': function (req, res) {
+		var map = new Object(); // or var map = {};
+		title = "Groomsman"
+		map['l'] = 'Landon';
+		map['a'] = 'Austin';
+		map['r'] = 'Ricky';
+		map['b'] = 'Braeden';
+		map['p'] = 'Pete';
+		map['e'] = 'Evan';
+		if (req.param('id') == 'l') {
+			title = "Best Man"
+		}
+		res.view('question/ask', {name: map[req.param('id')], title: title, id: req.param('id')});
+	},
+
+	'yes': function (req, res) {
+		var map = new Object(); // or var map = {};
+		title = "Groomsman"
+		map['l'] = 'Landon';
+		map['a'] = 'Austin';
+		map['r'] = 'Ricky';
+		map['b'] = 'Braeden';
+		map['p'] = 'Pete';
+		map['e'] = 'Evan';
+		if (req.param('id') == 'l') {
+			title = "Best Man"
+		}
+		var reply = {
+			name: map[req.param('id')],
+			response: 'yes'
+		};
+
+		Groomsmen.create(reply).exec(function (err, ansChoice) {
+			res.view('question/yes', {name: map[req.param('id')], title: title, id: req.param('id')});
+		});
+	},
+
+	'no': function (req, res) {
+		var map = new Object(); // or var map = {};
+		title = "Groomsman"
+		map['l'] = 'Landon';
+		map['a'] = 'Austin';
+		map['r'] = 'Ricky';
+		map['b'] = 'Braeden';
+		map['p'] = 'Pete';
+		map['e'] = 'Evan';
+		if (req.param('id') == 'l') {
+			title = "Best Man"
+		}
+		res.view('question/no', {name: map[req.param('id')], title: title, id: req.param('id')});
+	},
 	
 	'new': function (req, res) {
 		res.view({

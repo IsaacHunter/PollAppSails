@@ -1,0 +1,47 @@
+body {
+	background-color: #e3ecf8;
+}
+
+h1, p {
+	color: #333
+}
+
+footer {
+	font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+footer p {
+	margin-bottom: 0;
+}
+
+footer .title {
+    font-family: Raleway;
+    text-transform: uppercase;
+    background-color: #333;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: #e3ecf8;
+    font-weight: 100;
+    font-size: 2rem;
+    padding: 3px;
+    margin-bottom: 1rem;
+}
+
+footer .conf {
+	margin-bottom: 2rem;
+    color: #818a9;
+}
+
+.jumbotron-heading {
+	font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+.jumbotron-sub {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.jumbotron {
+    background-color: #fff;
+    border-radius: 0;
+}
