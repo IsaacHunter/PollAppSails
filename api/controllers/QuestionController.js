@@ -53,7 +53,14 @@ module.exports = {
 		};
 
 		Groomsmen.create(reply).exec(function (err, ansChoice) {
-			res.view('question/yes', {name: map[req.param('id')], title: title, id: req.param('id')});
+			Groomsmen.find({ response: 'yes' }).exec( function (err, theReplies) {
+				var replies = new Array();
+				theReplies.forEach(function(theReply) {
+					replies.push(theReply.name);
+				});
+				console.log(replies);
+				res.view('question/yes', {name: map[req.param('id')], title: title, id: req.param('id'), replies: replies});
+			})
 		});
 	},
 
