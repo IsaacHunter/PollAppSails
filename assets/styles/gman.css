@@ -15,7 +15,7 @@ footer p {
 }
 
 footer .title {
-    font-family: Raleway;
+    font-family: Raleway,HelveticaNeue,"Helvetica Neue",Helvetica,Arial,sans-serif!important;
     text-transform: uppercase;
     background-color: #333;
     color: #e3ecf8;
@@ -30,7 +30,7 @@ footer .conf {
 }
 
 footer .conf-yes {
-	color: #4278BC;
+	color: #4278bc!important;
 }
 
 .jumbotron-heading {
